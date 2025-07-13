@@ -1,93 +1,450 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diya Nair - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f4f4f4;
+    :root {
+      --primary-color: #4285F4;
+      --primary-dark: #3367D6;
+      --secondary-color: #34A853;
+      --accent-color: #EA4335;
+      --text-primary: #202124;
+      --text-secondary: #5F6368;
+      --background: #FFFFFF;
+      --surface: #F8F9FA;
+      --border: #DADCE0;
     }
-    header {
-      background-color: #333;
+    
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--text-primary);
+      background-color: var(--surface);
+      line-height: 1.6;
+    }
+    
+    .nav-container {
+      background-color: var(--primary-color);
+      padding: 0 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    
+    nav {
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+    }
+    
+    .nav-title {
       color: white;
-      padding: 20px 0;
+      font-size: 20px;
+      font-weight: 500;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+    
+    .nav-title i {
+      margin-right: 8px;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      opacity: 0.9;
+      transition: opacity 0.3s;
+    }
+    
+    .nav-links a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+    
+    .contact-bar {
+      background-color: var(--primary-dark);
+      color: white;
+      padding: 12px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      font-size: 0.9rem;
+    }
+    
+    .contact-bar a {
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+    
+    .contact-bar a:hover {
+      text-decoration: underline;
+    }
+    
+    .contact-bar i {
+      margin-right: 6px;
+      font-size: 1.1rem;
+    }
+    
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 80px 20px 40px;
       text-align: center;
     }
+    
+    h1 {
+      font-weight: 500;
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    
+    header p {
+      font-weight: 300;
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin: 10px 0 0;
+    }
+    
     section {
-      padding: 20px;
+      padding: 32px 24px;
       max-width: 900px;
-      margin: auto;
+      margin: 20px auto;
+      background-color: var(--background);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      border-radius: 8px;
     }
+    
     h2 {
-      border-bottom: 2px solid #333;
-      padding-bottom: 5px;
+      font-weight: 500;
+      color: var(--primary-color);
+      margin-top: 0;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+      font-size: 1.8rem;
+      display: flex;
+      align-items: center;
     }
-    .projects {
+    
+    h2 i {
+      margin-right: 10px;
+    }
+    
+    .skills-container {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
     }
-    .project {
-      background-color: white;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 15px;
-      width: 100%;
+    
+    .skill-category {
+      flex: 1;
+      min-width: 250px;
     }
-    @media (min-width: 600px) {
-      .project {
-        width: 45%;
-      }
+    
+    .skill-category h3 {
+      color: var(--primary-dark);
+      margin-bottom: 10px;
     }
+    
+    .skill-tag {
+      display: inline-block;
+      background-color: var(--surface);
+      padding: 6px 12px;
+      border-radius: 16px;
+      margin: 0 8px 8px 0;
+      font-size: 0.9rem;
+    }
+    
+    .experience-item, .project-item, .education-item {
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .experience-item:last-child, .project-item:last-child, .education-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    
+    .experience-header, .project-header, .education-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+    
+    .experience-title, .project-title, .education-title {
+      font-weight: 500;
+      font-size: 1.2rem;
+      color: var(--primary-dark);
+      margin: 0;
+    }
+    
+    .experience-company, .project-tech, .education-degree {
+      font-weight: 400;
+      color: var(--text-secondary);
+    }
+    
+    .experience-date, .project-date, .education-date {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+    
+    .experience-details, .project-details, .education-details {
+      padding-left: 20px;
+    }
+    
+    .experience-details li, .project-details li, .education-details li {
+      margin-bottom: 8px;
+      position: relative;
+      list-style-type: none;
+    }
+    
+    .experience-details li:before, .project-details li:before, .education-details li:before {
+      content: "•";
+      color: var(--primary-color);
+      position: absolute;
+      left: -15px;
+    }
+    
+    .project-tech {
+      font-size: 16px;
+      font-style: italic;
+    }
+    
     footer {
       text-align: center;
-      padding: 10px;
-      background-color: #222;
+      padding: 24px;
+      background-color: var(--primary-color);
       color: white;
       margin-top: 40px;
+    }
+    
+    .material-icons {
+      vertical-align: middle;
+    }
+    
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+      }
+      
+      .nav-links {
+        margin-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .contact-bar {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+      }
     }
   </style>
 </head>
 <body>
 
+  <div class="nav-container">
+    <nav>
+      <a href="portfolio.html" class="nav-title">
+        <i class="material-icons">person</i>
+        Portfolio
+      </a>
+      <div class="nav-links">
+        <a href="#skills"><i class="material-icons">psychology</i> Skills</a>
+        <a href="#experience"><i class="material-icons">work</i> Experience</a>
+        <a href="#projects"><i class="material-icons">code</i> Projects</a>
+        <a href="#education"><i class="material-icons">school</i> Education</a>
+        <a href="#contact"><i class="material-icons">email</i> Contact</a>
+      </div>
+    </nav>
+  </div>
+
+  <div class="contact-bar">
+    <a href="tel:6476777370"><i class="material-icons">phone</i> 647 677 7370</a>
+    <a href="mailto:danair@uwaterloo.ca"><i class="material-icons">email</i> danair@uwaterloo.ca</a>
+    <a href="https://linkedin.com/in/diya-anoop" target="_blank"><i class="material-icons">person</i> linkedin.com/in/diya-anoop</a>
+    <a href="https://github.com/diyanair1" target="_blank"><i class="material-icons">code</i> github.com/diyanair1</a>
+  </div>
+
   <header>
-    <h1>I am Diya Nair</h1>
-    <p>Web Developer | Designer | Tech Enthusiast</p>
+    <h1>Diya Nair</h1>
+    <p>Mechatronics Engineering Student | Software Developer | AI Enthusiast</p>
   </header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>
-      I'm a passionate web developer with experience in building responsive and interactive websites.
-      I love coding and always aim to learn new technologies.
-    </p>
-  </section>
-
-  <section>
-    <h2>Projects</h2>
-    <div class="projects">
-      <div class="project">
-        <h3>Project 1</h3>
-        <p>Description of your first project.</p>
+  <section id="skills">
+    <h2><i class="material-icons">psychology</i> Skills</h2>
+    <div class="skills-container">
+      <div class="skill-category">
+        <h3>Languages & Frameworks</h3>
+        <div>
+          <span class="skill-tag">C++</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">Langchain</span>
+          <span class="skill-tag">OpenCV</span>
+          <span class="skill-tag">Tensorflow</span>
+          <span class="skill-tag">Bash</span>
+          <span class="skill-tag">Selenium</span>
+          <span class="skill-tag">Django</span>
+          <span class="skill-tag">BeautifulSoup</span>
+        </div>
       </div>
-      <div class="project">
-        <h3>Project 2</h3>
-        <p>Description of your second project.</p>
+      <div class="skill-category">
+        <h3>Tools & Platforms</h3>
+        <div>
+          <span class="skill-tag">AWS</span>
+          <span class="skill-tag">Git/Github</span>
+          <span class="skill-tag">JIRA</span>
+          <span class="skill-tag">Confluence</span>
+          <span class="skill-tag">SolidWorks</span>
+          <span class="skill-tag">AutoCAD</span>
+          <span class="skill-tag">Arduino</span>
+          <span class="skill-tag">Linux</span>
+          <span class="skill-tag">Ubuntu</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <section>
-    <h2>Contact</h2>
-    <p>Email: you@example.com</p>
-    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+  <section id="experience">
+    <h2><i class="material-icons">work</i> Experience</h2>
+    
+    <div class="experience-item">
+      <div class="experience-header">
+        <div>
+          <h3 class="experience-title">Software Engineering Intern</h3>
+          <p class="experience-company">Eon Media</p>
+        </div>
+        <span class="experience-date">Jan 2025 - April 2025</span>
+      </div>
+      <ul class="experience-details">
+        <li>Automated video encoding and metadata scraping using YT-DLP, FFmpeg, Python, Selenium, BeautifulSoup, and Postman, streamlining media processing workflows, improving code reliability by 25%.</li>
+        <li>Tested Eon products to ensure enhanced user experience, optimized automation testing for Eon AI products, and annotated datasets to improve logo detection.</li>
+        <li>Conducted AI research to improve logo and scoring detection using OpenCV and Librosa.</li>
+        <li>Assisted AI/ML engineers to build an end-to-end pipeline for audio content analysis, integrating logo/brand detection using YOLOv8, voice recognition, and category/summary generation using fine-tuned LLMs and NER.</li>
+        <li>Facilitate Sprint Planning and backlog refinement, optimizing JIRA to reduce backlog size by ~30% and streamline project delivery.</li>
+      </ul>
+    </div>
+    
+    <div class="experience-item">
+      <div class="experience-header">
+        <div>
+          <h3 class="experience-title">Diagnostic Imaging Intern</h3>
+          <p class="experience-company">William Osler Health System</p>
+        </div>
+        <span class="experience-date">July 2023 - August 2023</span>
+      </div>
+      <ul class="experience-details">
+        <li>Assisted with daily diagnostic imaging routines and processed over 40 x-rays and 15 patients per day.</li>
+        <li>Enhanced patient experience by receiving over 99% positive feedback from patients and the radiology team.</li>
+      </ul>
+    </div>
   </section>
 
-  <footer>
-    &copy; 2025 Your Name. All rights reserved.
+  <section id="projects">
+    <h2><i class="material-icons">code</i> Projects</h2>
+    
+    <div class="project-item">
+      <div class="project-header">
+        <div>
+          <h3 class="project-title">Library Manager</h3>
+          <p class="project-tech">C++, Python, Wireguard, Proxmox Server, pfSense Firewall, Dell PowerEdge R730 Server</p>
+        </div>
+      </div>
+      <ul class="project-details">
+        <li>Setting up a home lab Library Manager using C++ and Python to experiment with data structures like linked lists, trees, heaps, and hash tables.</li>
+        <li>Implemented backend logic for book cataloging, user operations, and other features. Storing and managing data using PostgreSQL.</li>
+        <li>Exploring microservices architecture for authentication and user management via REST APIs.</li>
+      </ul>
+    </div>
+    
+    <div class="project-item">
+      <div class="project-header">
+        <div>
+          <h3 class="project-title">LLM Chatbot</h3>
+          <p class="project-tech">Python, GUI, LangChain, OpenAI (ChatGPT API), BeautifulSoup, Streamlit, Chroma</p>
+        </div>
+      </div>
+      <ul class="project-details">
+        <li>Developed an LLM-based chatbot capable of scanning websites and providing interactive, context-aware answers.</li>
+        <li>Used OpenAI's ChatGPT models for generating conversational responses and hosted on Streamlit.</li>
+        <li>Integrated Beautiful Soup for data extraction and Chroma Vector Store for data storage and retrieval.</li>
+      </ul>
+    </div>
+    
+    <div class="project-item">
+      <div class="project-header">
+        <div>
+          <h3 class="project-title">DinoGame</h3>
+          <p class="project-tech">Python, Pygame</p>
+        </div>
+      </div>
+      <ul class="project-details">
+        <li>Developed a custom version of the popular Dino game using Python and Pygame, with dynamic GUI gameplay.</li>
+        <li>Utilised object-oriented programming to design custom classes to control sprite behavior.</li>
+        <li>Implemented scoring logic, obstacle spawning, and character control.</li>
+      </ul>
+    </div>
+    
+    <div class="project-item">
+      <div class="project-header">
+        <div>
+          <h3 class="project-title">MediBot (First Aid Ambulance)</h3>
+          <p class="project-tech">RobotC, Lego EV3, PID</p>
+        </div>
+      </div>
+      <ul class="project-details">
+        <li>Designed an autonomous ambulance robot with Lego EV3 to navigate a maze by simulating road conditions.</li>
+        <li>Integrated motors, ultrasonic, color, touch, sound, and gyro sensors for obstacle detection, and navigation.</li>
+        <li>Applied a PID controller system to enable accurate 90° turns and prevent overshooting.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2><i class="material-icons">school</i> Education</h2>
+    <div class="education-item">
+      <div class="education-header">
+        <div>
+          <h3 class="education-title">University of Waterloo</h3>
+          <p class="education-degree">Candidate for BASc in Mechatronics Engineering</p>
+        </div>
+        <span class="education-date">September 2024 - April 2029</span>
+      </div>
+      <ul class="education-details">
+        <li>Courses: Digital Computation (C++), Data Structures and Algorithms, Linear Algebra/Calculus, Circuits</li>
+        <li>Certified in Standard First Aid - CPR C - AED through St. John Ambulance</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer id="contact">
+    &copy; 2025 Diya Nair. All rights reserved.
   </footer>
 
 </body>
