@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diya Nair | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #001f3f, #001933, #000c1a);
+      color: #e0e0e0;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 4rem;
+      margin: 0;
+      letter-spacing: 2px;
+      color: #00d9ff;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #b0bec5;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      background-color: rgba(0, 0, 0, 0.4);
+      font-weight: 400;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    nav a:hover {
+      color: #00d9ff;
+    }
+
+    .resume-link {
+      margin-top: 1rem;
+    }
+
+    .resume-link a {
+      color: #00d9ff;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border: 1px solid #00d9ff;
+      border-radius: 6px;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+
+    .resume-link a:hover {
+      background: #00d9ff;
+      color: #001f3f;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.5rem;
+      color: #00d9ff;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding-bottom: 0.3rem;
+      margin-top: 3rem;
+    }
+
+    .project {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 217, 255, 0.1);
+    }
+
+    .project-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .project-text {
+      flex: 1 1 60%;
+    }
+
+    .project-img, .landscape-img {
+      flex: 1 1 35%;
+      max-width: 300px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .landscape-img {
+      width: 100%;
+      margin-top: 1rem;
+      max-height: 400px;
+    }
+
+    .project h3 {
+      color: #ffffff;
+    }
+
+    .project a {
+      color: #00d9ff;
+      text-decoration: none;
+    }
+
+    .project a:hover {
+      text-decoration: underline;
+    }
+
+    .tech {
+      font-style: italic;
+      color: #b0bec5;
+      margin-top: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #607d8b;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Diya Nair</h1>
+    <p>Mechatronics Engineering | University of Waterloo</p>
+    <div class="resume-link">
+      <a href="https://diyanair1.github.io/resume/" target="_blank">View Resume</a>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#projects">Projects</a>
+    <a href="#awards">Awards</a>
+    <a href="#mechanical">Mechanical</a>
+    <a href="#circuits">Circuits</a>
+  </nav>
+
+  <div class="container" id="projects">
+    <h2>Personal Projects</h2>
+
+    <div class="project">
+      <h3>LLM Chatbot — <a href="https://github.com/diyanair1/chatbot" target="_blank">GitHub Repo</a></h3>
+      <p class="tech">Python, LangChain, OpenAI, Beautiful Soup, Streamlit, Chroma Vector Store</p>
+      <ul>
+        <li>Built an LLM chatbot to scan websites and return interactive, context-aware responses.</li>
+        <li>Used LangChain for real-time response streaming and OpenAI for conversations.</li>
+        <li>Integrated Beautiful Soup and ChromaDB for vector-based information retrieval.</li>
+      </ul>
+      <img src="llm.jpg" alt="LLM Chatbot Screenshot" class="landscape-img">
+    </div>
+
+    <div class="project">
+      <div class="project-content">
+        <div class="project-text">
+          <h3>Library Manager — <a href="https://github.com/diyanair1/LibraryManager" target="_blank">GitHub Repo</a></h3>
+          <p class="tech">C++, Python, Wireguard, Proxmox, pfSense, PostgreSQL</p>
+          <ul>
+            <li>Designed a library management backend using C++ and Python.</li>
+            <li>Explored data structures like linked lists, heaps, trees, and hash tables.</li>
+            <li>Implemented PostgreSQL DB and microservices via REST APIs.</li>
+          </ul>
+        </div>
+        <img src="library.jpg" alt="Library Manager Screenshot" class="project-img">
+      </div>
+    </div>
+
+    <div class="project">
+      <h3>DinoGame — <a href="https://github.com/diyanair1/Dino-Game" target="_blank">GitHub Repo</a></h3>
+      <p class="tech">Python, Pygame</p>
+      <ul>
+        <li>Developed a playable Dino game with GUI and animation using Pygame.</li>
+        <li>Applied object-oriented programming for sprite and obstacle behavior.</li>
+        <li>Included sound effects, scoring, and physics-based movement.</li>
+      </ul>
+      <img src="dino.jpg" alt="Dino Game Screenshot" class="landscape-img">
+    </div>
+
+    <div class="project">
+      <div class="project-content">
+        <div class="project-text">
+          <h3>MediBot — <a href="https://github.com/diyanair1/Medibot" target="_blank">GitHub Repo</a></h3>
+          <p class="tech">C, RobotC, Lego EV3</p>
+          <ul>
+            <li>Built an autonomous Lego EV3 ambulance robot for maze navigation.</li>
+            <li>Used multiple sensors and a motorized robotic arm for obstacle handling.</li>
+            <li>Currently working on implementing a PID controller for precise turns.</li>
+          </ul>
+        </div>
+        <img src="medi1.jpg" alt="MediBot Screenshot" class="project-img">
+      </div>
+    </div>
+
+    <h2>Awards & Competitions</h2>
+
+    <div class="project">
+      <div class="project-content">
+        <div class="project-text">
+          <h3>Winch Transport System — Waterloo Engineering Competition (2nd Place)</h3>
+          <ul>
+            <li>Designed a mechanical winch system to carry medical supplies uphill.</li>
+            <li>Optimized for stability and load-bearing under constrained mechanics.</li>
+          </ul>
+        </div>
+        <img src="winch.jpg" alt="Winch Transport System" class="project-img">
+      </div>
+    </div>
+
+    <h2>Mechanical Projects</h2>
+
+    <div class="project">
+      <div class="project-content">
+        <div class="project-text">
+          <h3>Gear Spur Design & Keychain</h3>
+          <p>Created in SolidWorks and machined using a lathe, mill, and laser cutter.</p>
+        </div>
+        <img src="keychain.jpg" alt="Gear Spur Design" class="project-img">
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-content">
+        <div class="project-text">
+          <h3>Simple Audio Player</h3>
+          <p class="tech">Arduino Uno, C++, Oscilloscope</p>
+          <ul>
+            <li>Programmed melodies using PWM and verified with oscilloscope.</li>
+            <li>Used potentiometer and capacitor to manage amplification and reduce noise.</li>
+          </ul>
+        </div>
+        <img src="speaker1.jpg" alt="Audio Player Project" class="project-img">
+      </div>
+    </div>
+
+    <h2>Circuit Designs</h2>
+
+    <div class="project">
+      <div class="project-content">
+        <div class="project-text">
+          <h3>Multistage Op-Amp Amplifier</h3>
+          <p class="tech">LM741, Breadboard, TinkerCAD, DigiKey, DMM</p>
+          <ul>
+            <li>Designed and simulated a high-gain amplifier using Op-Amps.</li>
+            <li>Validated results using multimeter and oscilloscope readings.</li>
+          </ul>
+        </div>
+        <img src="opamps.jpg" alt="Op-Amp Project" class="project-img">
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-content">
+        <div class="project-text">
+          <h3>RC Transient Circuits</h3>
+          <p class="tech">Oscilloscope, Signal Generator, Resistors, Capacitors</p>
+          <ul>
+            <li>Analyzed transient response behavior of RC circuits.</li>
+            <li>Captured voltage-time graphs using oscilloscope for evaluation.</li>
+          </ul>
+        </div>
+        <img src="rc.jpg" alt="RC Circuits" class="project-img">
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-content">
+        <div class="project-text">
+          <h3>Simple Load Cell</h3>
+          <p>Constructed a basic load cell circuit for weight sensing and calibration experiments.</p>
+        </div>
+        <img src="loadcell.jpg" alt="Load Cell" class="project-img">
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Diya Nair. All rights reserved.
+  </footer>
+</body>
+</html>
