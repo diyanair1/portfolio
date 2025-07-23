@@ -52,15 +52,25 @@
       justify-content: space-between;
       gap: 1.5rem;
       flex-wrap: wrap;
+      align-items: center;
     }
     .project-text {
       flex: 1 1 60%;
     }
-    .project img {
+    .project-img {
+      flex: 1 1 35%;
       max-width: 300px;
-      height: auto;
+      max-height: 250px;
+      object-fit: cover;
       border-radius: 5px;
-      flex-shrink: 0;
+    }
+    .landscape-img {
+      width: 100%;
+      height: auto;
+      margin-top: 1rem;
+      border-radius: 8px;
+      object-fit: cover;
+      max-height: 400px;
     }
     .project a {
       color: #3367d6;
@@ -88,7 +98,7 @@
     <h1>Diya Nair</h1>
     <p>Mechatronics Engineering | University of Waterloo</p>
     <div class="resume-link">
-      <a href="https://example.com/resume.pdf" target="_blank">View Resume</a>
+      <a href="https://diyanair1.github.io/resume/" target="_blank">View Resume</a>
     </div>
   </header>
 
@@ -97,18 +107,14 @@
     <h2>Personal Projects</h2>
 
     <div class="project">
-      <div class="project-content">
-        <div class="project-text">
-          <h3>LLM Chatbot — <a href="https://github.com/diyanair1/chatbot" target="_blank">GitHub Repo</a></h3>
-          <p class="tech">Python, LangChain, OpenAI, Beautiful Soup, Streamlit, Chroma Vector Store</p>
-          <ul>
-            <li>Built an LLM chatbot to scan websites and return interactive, context-aware responses.</li>
-            <li>Used LangChain for real-time response streaming and OpenAI for conversations.</li>
-            <li>Integrated Beautiful Soup and ChromaDB for vector-based information retrieval.</li>
-          </ul>
-        </div>
-        <img src="https://via.placeholder.com/300x200?text=LLM+Chatbot" alt="LLM Chatbot Screenshot">
-      </div>
+      <h3>LLM Chatbot — <a href="https://github.com/diyanair1/chatbot" target="_blank">GitHub Repo</a></h3>
+      <p class="tech">Python, LangChain, OpenAI, Beautiful Soup, Streamlit, Chroma Vector Store</p>
+      <ul>
+        <li>Built an LLM chatbot to scan websites and return interactive, context-aware responses.</li>
+        <li>Used LangChain for real-time response streaming and OpenAI for conversations.</li>
+        <li>Integrated Beautiful Soup and ChromaDB for vector-based information retrieval.</li>
+      </ul>
+      <img src="llm.jpg" alt="LLM Chatbot Screenshot" class="landscape-img">
     </div>
 
     <div class="project">
@@ -122,23 +128,19 @@
             <li>Implemented PostgreSQL DB and microservices via REST APIs.</li>
           </ul>
         </div>
-        <img src="https://via.placeholder.com/300x200?text=Library+Manager" alt="Library Manager Screenshot">
+        <img src="library.jpg" alt="Library Manager Screenshot" class="project-img">
       </div>
     </div>
 
     <div class="project">
-      <div class="project-content">
-        <div class="project-text">
-          <h3>DinoGame — <a href="https://github.com/diyanair1/Dino-Game" target="_blank">GitHub Repo</a></h3>
-          <p class="tech">Python, Pygame</p>
-          <ul>
-            <li>Developed a playable Dino game with GUI and animation using Pygame.</li>
-            <li>Applied object-oriented programming for sprite and obstacle behavior.</li>
-            <li>Included sound effects, scoring, and physics-based movement.</li>
-          </ul>
-        </div>
-        <img src="https://via.placeholder.com/300x200?text=Dino+Game" alt="Dino Game Screenshot">
-      </div>
+      <h3>DinoGame — <a href="https://github.com/diyanair1/Dino-Game" target="_blank">GitHub Repo</a></h3>
+      <p class="tech">Python, Pygame</p>
+      <ul>
+        <li>Developed a playable Dino game with GUI and animation using Pygame.</li>
+        <li>Applied object-oriented programming for sprite and obstacle behavior.</li>
+        <li>Included sound effects, scoring, and physics-based movement.</li>
+      </ul>
+      <img src="dino.jpg" alt="Dino Game Screenshot" class="landscape-img">
     </div>
 
     <div class="project">
@@ -152,7 +154,7 @@
             <li>Currently working on implementing a PID controller for precise turns.</li>
           </ul>
         </div>
-        <img src="https://via.placeholder.com/300x200?text=MediBot" alt="Medibot Screenshot">
+        <img src="medi1.jpg" alt="MediBot Screenshot" class="project-img">
       </div>
     </div>
 
@@ -167,7 +169,7 @@
             <li>Optimized for stability and load-bearing under constrained mechanics.</li>
           </ul>
         </div>
-        <img src="https://via.placeholder.com/300x200?text=Winch+System" alt="Winch Transport System">
+        <img src="winch.jpg" alt="Winch Transport System" class="project-img">
       </div>
     </div>
 
@@ -179,7 +181,7 @@
           <h3>Gear Spur Design & Keychain</h3>
           <p>Created in SolidWorks and machined using a lathe, mill, and laser cutter.</p>
         </div>
-        <img src="https://via.placeholder.com/300x200?text=Gear+Design" alt="Gear Spur Design">
+        <img src="keychain.jpg" alt="Gear Spur Design" class="project-img">
       </div>
     </div>
 
@@ -193,7 +195,7 @@
             <li>Used potentiometer and capacitor to manage amplification and reduce noise.</li>
           </ul>
         </div>
-        <img src="https://via.placeholder.com/300x200?text=Audio+Player" alt="Audio Player Project">
+        <img src="speaker1.jpg" alt="Audio Player Project" class="project-img">
       </div>
     </div>
 
@@ -209,7 +211,7 @@
             <li>Validated results using multimeter and oscilloscope readings.</li>
           </ul>
         </div>
-        <img src="https://via.placeholder.com/300x200?text=Op-Amp+Amp" alt="Op-Amp Project">
+        <img src="opamps.jpg" alt="Op-Amp Project" class="project-img">
       </div>
     </div>
 
@@ -223,7 +225,7 @@
             <li>Captured voltage-time graphs using oscilloscope for evaluation.</li>
           </ul>
         </div>
-        <img src="https://via.placeholder.com/300x200?text=RC+Circuits" alt="RC Circuits">
+        <img src="rc.jpg" alt="RC Circuits" class="project-img">
       </div>
     </div>
 
@@ -233,7 +235,7 @@
           <h3>Simple Load Cell</h3>
           <p>Constructed a basic load cell circuit for weight sensing and calibration experiments.</p>
         </div>
-        <img src="https://via.placeholder.com/300x200?text=Load+Cell" alt="Load Cell">
+        <img src="loadcell.jpg" alt="Load Cell" class="project-img">
       </div>
     </div>
 
